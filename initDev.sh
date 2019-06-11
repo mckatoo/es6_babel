@@ -39,3 +39,5 @@ sed -i '/"license": "MIT",/a   "scripts": { "dev": "babel ./src/main.js -o ./dev
 
 # Configura o eslint, remove o package-lock.json que é usado pelo npm e instala as dependências com o yarn já que estamos usando o yarn e não o npm
 yarn eslint --init && rm package-lock.json && yarn
+
+exit 0;
