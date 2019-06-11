@@ -1,17 +1,14 @@
 #!/bin/bash
 
-PROJETO=$1
-if [ -z "$PROJETO" ]
+DESTINO=$1
+if [ -z "$DESTINO" ]
 then
-  while [ -z "$PROJETO" ]
-  do
-    echo "Informe um nome para o projeto:"
-    read -r "PROJETO"
-  done
+  echo "Informe um destino para o projeto! Atenção, se a pasta não existir ela será criada. Ex: ./initDev.sh DESTINO"
+  exit 0;
 fi
 
-mkdir "$PROJETO"
-cd "$PROJETO" && mv ../.git . && mv ../.gitignore . && mv ../LICENSE . && mv ../README.md .
+mkdir -p "$DESTINO"
+cd "$DESTINO" || (echo "A pasta de destino não foi criada!" && exit 0)
 
 # Constroi o package.json sem perguntar parametros, para usar parametros é só tirar o "-y"
 yarn init -y
