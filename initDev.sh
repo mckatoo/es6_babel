@@ -18,7 +18,7 @@ yarn init -y
 # sucrase é responsavel por converter o typescript em javascript porque o browser ou o node não lê arquivo ts e sim js
 # nodemon é o módulo responsável por executar o app e monitorar as mudanças reiniciando se necessário
 # eslint e módulos relacionados ajudam a identificar erros em tempo de desenvolvimento
-yarn add -D @babel/cli @babel/preset-env @babel/core eslint
+yarn add -D @babel/cli @babel/preset-env @babel/core
 
 touch .babelrc
 
@@ -38,6 +38,6 @@ sed -i '/"license": "MIT",/a   "scripts": { "dev": "babel ./src/main.js -o ./dev
 # echo '{"watch": ["src"], "ext": "js", "execMap": {"js": "sucrase-node src/main.js"}}' > nodemon.json
 
 # Configura o eslint, remove o package-lock.json que é usado pelo npm e instala as dependências com o yarn já que estamos usando o yarn e não o npm
-yarn eslint --init && rm package-lock.json && yarn
+#yarn eslint --init && rm package-lock.json && yarn
 
 exit 0;
